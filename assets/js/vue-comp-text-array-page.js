@@ -4,6 +4,7 @@ const VueCompTextCycle = {
     `,
     props: {
       values: Array,
+      interval: Number,
     },
     data: function () {
         return {
@@ -14,6 +15,7 @@ const VueCompTextCycle = {
     methods: {
         updateNum: function (newVal) {
             this.displayText = newVal;
+            this.$emit('value-changed', newVal);
         },
         keyUpEventListener: function (event) {
             // console.log(event);
@@ -29,7 +31,9 @@ const VueCompTextCycle = {
     created: function () {
         console.log('Created');
         var numbers = new CircularIterator(this.values);
-        this.displayController = new DisplayController(numbers, this.updateNum);
+        this.displayController = new DisplayController(numbers, this.updateNum, {
+            interval: this.interval,
+        });
         document.addEventListener('keyup', this.keyUpEventListener);
     },
     destroyed: function () {

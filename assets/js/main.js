@@ -9,6 +9,7 @@ const routes = [
   { path: '/letters-lower', component: VueCompLettersLower },
   { path: '/colors', component: VueCompColors },
   { path: '/shapes', component: VueCompShapes },
+  { path: '/words', component: VueCompWords },
 ]
 // Create our Vue router
 const router = new VueRouter({

@@ -7,15 +7,18 @@ const VueCompEntryPage = {
         <tr>
           <td @click="router.push('/num-0-100')">Numbers<br>0 - 100</td>
           <td @click="router.push('/num-tens')">Numbers<br>Tens</td>
-        <tr>
+        </tr>
         <tr>
           <td @click="router.push('/letters-upper')">Letters A-Z</td>
           <td @click="router.push('/letters-lower')">Letters a-z</td>
-        <tr>
+        </tr>
         <tr>
           <td @click="router.push('/shapes')">Shapes</td>
           <td @click="router.push('/colors')">Colors</td>
+        </tr>
         <tr>
+          <td @click="router.push('/words')">Words</td>
+        </tr>
       <table>
     </centered>
     `,
