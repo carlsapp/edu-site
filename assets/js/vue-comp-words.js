@@ -341,9 +341,15 @@ const VueCompWords = {
     methods: {
         newWord: function newWords(word) {
             console.log(`I just got a new word: ${word}`);
+            const newWord = new Audio(`audio-files/new-word.mp3`);
+            newWord.play();
             setTimeout(function playWord() {
-                let aud = new Audio(`audio-files/${word}.mp3`);
+                const aud = new Audio(`audio-files/${word}.mp3`);
                 aud.play();
+                setTimeout(function playWordAgain() {
+                    const aud = new Audio(`audio-files/${word}.mp3`);
+                    aud.play();
+                }, 3000);
             }, 5000)
         }
     }
